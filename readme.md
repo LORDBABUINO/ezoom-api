@@ -17,5 +17,5 @@ docker-compose up -d
 docker container exec ezoom_php php index.php migrate
 ```
 
-then API will available on port http://localhost:8080
+then API will available on port http://localhost:8080/courses
 
