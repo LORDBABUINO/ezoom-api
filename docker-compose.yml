@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  php:
+    build: php
+    container_name: ezoom_php
+    env_file:
+      php/.env
+    depends_on:
+      - mysql
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - "8080:80"
+  mysql:
+    image: mysql:8.0.21
+    container_name: ezoom_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    env_file:
+      mysql/.env
+    volumes:
+      - ./mysql/db:/var/lib/mysql
