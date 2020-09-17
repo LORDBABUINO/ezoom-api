@@ -13,9 +13,13 @@ Run the following commands:
 ```shell
 git clone https://github.com/LORDBABUINO/ezoom-api.git
 cd ezoom-api
+cp php/.env.example php/.env
+cp mysql/.env.example mysql/.env
 docker-compose up -d
 docker container exec ezoom_php php index.php migrate
 ```
 
-then API will available on port http://localhost:8080/courses
+then API will available on port http://localhost:8080/courses .
+
+You also can change the database password editing the .env file on php and mysql directories.
 
